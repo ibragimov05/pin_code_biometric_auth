@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/developer.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
@@ -18,8 +20,6 @@ class PinCodeScreen extends StatefulWidget {
 class _PinCodeScreenState extends State<PinCodeScreen> {
   final LocalAuthentication _auth = LocalAuthentication();
   final TextEditingController _pinCodeController = TextEditingController();
-
-  String get _pinCode => _pinCodeController.text;
 
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
         );
       } catch (e) {
         // Handle any errors during biometric authentication
-        print("Biometric authentication failed: $e");
+        log("Biometric authentication failed: $e");
       }
     }
 
@@ -53,7 +53,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
         // Update the UI to show the PIN input screen
       });
     } else {
-      // If authentication succeeds, navigate to the HomeScreen
+      if (!mounted) return;
       Navigator.pushReplacement(context, HomeScreen.route());
     }
   }

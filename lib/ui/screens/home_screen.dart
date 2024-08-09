@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home screen'),
         leading: IconButton(onPressed: () {
           Navigator.pushReplacement(context, PinCodeScreen.route());
-        }, icon: Icon(Icons.logout)),
+        }, icon: const Icon(Icons.logout)),
         actions: [
           IconButton(
             onPressed: () => Navigator.push(context, SettingsScreen.route()),

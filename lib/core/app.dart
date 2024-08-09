@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pin_code_biometric_auth/ui/screens/home_screen.dart';
 import 'package:pin_code_biometric_auth/ui/screens/pin_code_screen.dart';
 
 class PinCodeBioAuth extends StatelessWidget {
